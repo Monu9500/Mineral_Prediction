@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h2>Welcome, {{ user.first_name }} {{ user.last_name }}!</h2>
+  <p>Access Level: {{ level }}</p>
+
+  <ul>
+    {% if level == 1 %}
+      <li><a href="{{ url_for('create_user') }}">Create User</a></li>
+    {% endif %}
+    {% if level in [1, 2] %}
+      <li><a href="{{ url_for('insert_rock') }}">Insert/Update Rocks</a></li>
+      <li><a href="{{ url_for('insert_location') }}">Insert/Update Locations</a></li>
+    {% endif %}
+    <li><a href="{{ url_for('map_page') }}">View Map</a></li>
+  </ul>
+
+  <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
+

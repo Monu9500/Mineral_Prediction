@@ -1,0 +1,23 @@
+<!-- templates/rock_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Detail</title>
+</head>
+<body>
+    <h2>Rock Detail</h2>
+    <ul>
+        <li><strong>ID:</strong> {{ rock.Id }}</li>
+        <li><strong>Name:</strong> {{ rock.Rocks }}</li>
+        <li><strong>Place:</strong> {{ rock.Place }}</li>
+        <li><strong>Latitude:</strong> {{ rock.Latitude }}</li>
+        <li><strong>Longitude:</strong> {{ rock.Longitude }}</li>
+    </ul>
+
+    <a href="{{ url_for('insert_rock') }}">Insert New Rock</a><br>
+    <a href="{{ url_for('insert_location') }}">Insert New Location</a><br>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    <a href="{{ url_for('update_rock', rock_id=rock['Id']) }}">Update Rock</a><br>
+    <a href="{{ url_for('update_location', rock_id=rock['Id']) }}">Update Location</a><br>
+</body>
+</html>

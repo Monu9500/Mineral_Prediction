@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Finder - Interactive Rock Location Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="m-0 p-0 overflow-hidden">
+  <div class="relative h-screen w-full overflow-hidden">
+
+    <!-- Location Search in center top -->
+    <div class="absolute top-4 left-1/2 transform -translate-x-1/2 z-[1000]">
+      <form id="locationSearchForm" class="flex gap-2 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-2">
+        <input id="locationSearchInput" placeholder="Search for location..."
+          class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Search</button>
+      </form>
+    </div>
+
+    <!-- Rock Search on right top -->
+    <div class="absolute top-4 right-4 z-[1000]">
+      <div class="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-4 min-w-[320px]">
+        <form id="searchForm" class="flex gap-2">
+          <input type="text" id="searchInput" placeholder="Search for rocks..."
+            class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Search</button>
+        </form>
+        <div id="searchResults" class="mt-2 hidden text-sm text-gray-600">
+          <span id="resultsCount">0 locations found</span>
+          <button id="clearSearch" class="text-blue-500 hover:underline ml-2">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="absolute top-4 left-4 z-[1000] space-y-2">
+      <button id="gpsToggle" class="px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50">GPS Off</button>
+      <button id="resetView" class="px-4 py-2 bg-white border border-gray-300 rounded-md hover:bg-gray-50">Reset View</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="absolute bottom-4 left-4 z-[1000]">
+      <div class="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-3 text-sm text-gray-600">
+        <span id="locationCount">0 rock locations</span>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div id="map" class="absolute inset-0 w-full h-full bg-blue-100"></div>
+
+    <!-- Loading -->
+    <div id="loadingOverlay" class="absolute inset-0 bg-blue-50/90 flex items-center justify-center z-[999]">
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <div class="flex items-center gap-3 mb-2">
+          <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500"></div>
+          <span class="font-medium">Loading World Map...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="{{ url_for('static', filename='map_page/script.js') }}"></script>
+</body>
+</html>

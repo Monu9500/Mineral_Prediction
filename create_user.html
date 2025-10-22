@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create New User</title>
+</head>
+<body>
+  <h2>Create New User</h2>
+  <form method="POST">
+    <label>Id</label><input type="number" name="id"placeholder="Enter ID">
+    <label>First Name:</label><input type="text" name="first_name" required><br><br>
+    <label>Last Name:</label><input type="text" name="last_name" required><br><br>
+    <label>Email:</label><input type="email" name="email" required><br><br>
+    <label>Password:</label><input type="password" name="password" required><br><br>
+    <label>Access Level:</label>
+    <select name="level" required>
+      <option value="1">Level 1 (Admin)</option>
+      <option value="2">Level 2 (Editor)</option>
+      <option value="3">Level 3 (Viewer)</option>
+    </select><br><br>
+    <button type="submit">Create User</button>
+  </form>
+  <br>
+  <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>
+

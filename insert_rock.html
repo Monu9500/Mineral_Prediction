@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insert Rock</title>
+</head>
+<body>
+  <h2>Insert New Rock</h2>
+  <form method="POST">
+    <label>Id:</label><input type="number" name="rock_id" placeholder="Enter ID">
+    <label>Name:</label><input type="text" name="rock_name" required><br><br>
+    <label>Parent ID:</label><input type="number" name="parent_id" required><br><br>
+    <button type="submit">Insert Rock</button>
+  </form>
+  <br>
+  <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

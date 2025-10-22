@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Rock</title>
+</head>
+<body>
+    <h2>Update Rock</h2>
+    <form method="POST">
+        <label>ID:</label>
+        <input type="text" name="id" value="{{ rock.Id }}" readonly><br><br>
+
+        <label>Name:</label>
+        <input type="text" name="rock_name" value="{{ rock.Rocks }}" required><br><br>
+
+        <label>Place:</label>
+        <input type="text" name="place" value="{{ rock.Place }}" required><br><br>
+
+        <label>Latitude:</label>
+        <input type="text" name="latitude" value="{{ rock.Latitude }}" required><br><br>
+
+        <label>Longitude:</label>
+        <input type="text" name="longitude" value="{{ rock.Longitude }}" required><br><br>
+
+        <button type="submit">Update Rock</button>
+    </form>
+    <br>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+
+<!-- <a href="{{ url_for('rock_detail', rock_id=rock.Id) }}">Back</a> -->

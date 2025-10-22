@@ -1,0 +1,31 @@
+<AccessControl>
+  <Level id="1">
+    <Page>/dashboard</Page>
+    <Page>/map</Page>
+    <Page>/api</Page>
+    <Page>/rock</Page>
+    <Page>/insert_rock</Page>
+    <Page>/insert_location</Page>
+    <Page>/update_rock</Page>
+    <Page>/update_location</Page>
+    <Page>/create_user</Page>
+  </Level>
+
+  <Level id="2">
+    <Page>/dashboard</Page>
+    <Page>/map</Page>
+    <Page>/api</Page>
+    <Page>/rock</Page>
+    <Page>/insert_rock</Page>
+    <Page>/insert_location</Page>
+    <Page>/update_rock</Page>
+    <Page>/update_location</Page>
+  </Level>
+
+  <Level id="3">
+    <Page>/dashboard</Page>
+    <Page>/map</Page>
+    <Page>/api</Page>
+    <Page>/rock</Page>
+  </Level>
+</AccessControl>
